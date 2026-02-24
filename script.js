@@ -30,6 +30,17 @@ function render() {
   document.getElementById("rejectedCount").innerText = jobs.filter(j => j.status === "rejected").length;
   document.getElementById("tabCount").innerText = filtered.length;
 
+  
+  if (filtered.length === 0) {
+    container.innerHTML = `
+    <div class="empty">
+        <h3>No jobs Available</h3>
+        <p>Jobs will appear here once you move them to this section.</p>
+      </div>
+    `;
+    return;
+  }
+
 
   filtered.forEach(job => {
     const card = document.createElement("div");
