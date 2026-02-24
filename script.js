@@ -58,7 +58,25 @@ document.querySelector(".tabs").addEventListener("click", e => {
     currentTab = e.target.dataset.tab;
     render();
   };
+});
+
+container.addEventListener("click", e => {
   
+  const interviewBtn = e.target.closest(".interview-btn");
+  const rejectedBtn = e.target.closest(".rejected-btn");
+
+  if (interviewBtn) {
+    const id = Number(interviewBtn.dataset.id);
+    const job = jobs.find(j => j.id === id);
+    job.status = job.status === "interview" ? "all" : "interview";
+    render();
+  }
+  if (rejectedBtn) {
+    const id = Number(rejectedBtn.dataset.id);
+    const job = jobs.find(j => j.id === id);
+    job.status = job.status === "rejected" ? "all" : "rejected";
+    render();
+  }
 });
 
 render();
