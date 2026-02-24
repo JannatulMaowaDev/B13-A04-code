@@ -12,3 +12,28 @@ let jobs = [
 let currentTab = "all";
 const container = document.querySelector(".cards");
 
+
+function render() {
+  
+  container.innerHTML = "";
+
+  filtered.forEach(job => {
+    const card = document.createElement("div");
+    card.classList.add("card");
+
+    card.innerHTML = `
+    <button class="delete-btn" data-id="${job.id}">X</button>
+    <h3>${job.company}</h3>
+    <p><strong>${job.position}</strong></p>
+    <p>${job.location} | ${job.type}</p>
+    <p>Salary: ${job.salary}</p>
+    <p>${job.description}</p>
+    <button class="interview-btn" data-id="${job.id}">Interview</button>
+      <button class="rejected-btn" data-id="${job.id}">Rejected</button>
+    `;
+
+    container.appendChild(card);
+  });
+
+}
+render();

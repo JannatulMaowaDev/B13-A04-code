@@ -1,17 +1,20 @@
-body{
+body {
   font-family: Arial, sans-serif;
   margin: 0;
   background: #f5f7fa;
 }
+
 header {
   color: rgb(27, 22, 22);
   padding: 20px;
 }
+
 .dashboard {
   display: flex;
   gap: 15px;
   padding: 20px;
 }
+
 .stat {
   flex: 1;
   background: white;
@@ -26,65 +29,4 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-.tabs {
-  margin: 15px 0;
-  display: flex;
-  gap: 10px;
-}
-
-.tab {
-  padding: 8px 15px;
-  border: none;
-  cursor: pointer;
-  border-radius: 5px;
-  background: #e5e7eb;
-}
-.tab.active {
-  background: #2563eb;
-  color: white;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 15px;
-}
-.card {
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  position: relative;
-}
-
-.card button {
-  margin-top: 8px;
-  margin-right: 5px;
-  padding: 5px 10px;
-  border: none;
-  cursor: pointer;
-  border-radius: 4px;
-}
-.interview-btn { background: green; color: white; }
-.rejected-btn { background: crimson; color: white; }
-.delete-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: black;
-  color: white;
-}
-
-/* Empty state */
-.empty {
-  text-align: center;
-  padding: 40px;
-  color: gray;
-}
-
-/* Responsive */
-@media(max-width: 600px) {
-  .dashboard {
-    flex-direction: column;
-  }
 }
