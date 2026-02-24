@@ -50,4 +50,15 @@ function render() {
   });
 
 }
+
+document.querySelector(".tabs").addEventListener("click", e => {
+  if (e.target.classList.contains("tab")) {
+    document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+    e.target.classList.add("active");
+    currentTab = e.target.dataset.tab;
+    render();
+  };
+  
+});
+
 render();
