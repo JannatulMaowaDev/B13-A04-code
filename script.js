@@ -24,6 +24,13 @@ function render() {
     filtered = jobs.filter(job => job.status === currentTab);
   };
 
+
+  document.getElementById("totalCount").innerText = jobs.length;
+  document.getElementById("interviewCount").innerText = jobs.filter(j => j.status === "interview").length;
+  document.getElementById("rejectedCount").innerText = jobs.filter(j => j.status === "rejected").length;
+  document.getElementById("tabCount").innerText = filtered.length;
+
+
   filtered.forEach(job => {
     const card = document.createElement("div");
     card.classList.add("card");
