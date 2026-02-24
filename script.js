@@ -17,6 +17,13 @@ function render() {
   
   container.innerHTML = "";
 
+   let filtered;
+  if (currentTab === "all") {
+    filtered = jobs;
+  } else {
+    filtered = jobs.filter(job => job.status === currentTab);
+  };
+
   filtered.forEach(job => {
     const card = document.createElement("div");
     card.classList.add("card");
