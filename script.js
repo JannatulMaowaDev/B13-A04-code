@@ -64,6 +64,7 @@ container.addEventListener("click", e => {
   
   const interviewBtn = e.target.closest(".interview-btn");
   const rejectedBtn = e.target.closest(".rejected-btn");
+    const deleteBtn = e.target.closest(".delete-btn");
 
   if (interviewBtn) {
     const id = Number(interviewBtn.dataset.id);
@@ -75,6 +76,11 @@ container.addEventListener("click", e => {
     const id = Number(rejectedBtn.dataset.id);
     const job = jobs.find(j => j.id === id);
     job.status = job.status === "rejected" ? "all" : "rejected";
+    render();
+  }
+   if(deleteBtn){
+    const id = Number(deleteBtn.dataset.id);
+    jobs = jobs.filter(j => j.id !== id);
     render();
   }
 });
